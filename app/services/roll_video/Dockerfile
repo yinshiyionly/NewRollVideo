@@ -151,7 +151,7 @@ RUN apt-get update && apt-get install -y \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # 拷贝 FFmpeg 和相关依赖
-COPY --from=build-env /ffmpeg-install /usr/local
+# COPY --from=build-env /ffmpeg-install /usr/local
 COPY --from=build-env /usr/local/cuda /usr/local/cuda
 COPY --from=build-env /usr/local/lib /usr/local/lib
 COPY --from=build-env /usr/local/include /usr/local/include
